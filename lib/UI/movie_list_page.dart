@@ -12,6 +12,14 @@ class MoviesPage extends StatefulWidget {
 class _MoviesPageState extends State<MoviesPage> {
 
   final TextEditingController _controller = TextEditingController();
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // you can uncomment this to get all batman movies when the page is loaded
+  //   Provider.of<MovieListViewModel>(context, listen: false).fetchMovies("batman");
+  // }
+
   @override
   Widget build(BuildContext context) {
 
@@ -25,12 +33,12 @@ class _MoviesPageState extends State<MoviesPage> {
       ),
       body: Container(
         padding: EdgeInsets.all(10),
-        width: 100,
-        height: 20,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         child: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.only(left:10),
               decoration: BoxDecoration(
                 color: Colors.grey,
                 borderRadius: BorderRadius.circular(15.0)
