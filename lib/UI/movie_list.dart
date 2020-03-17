@@ -18,7 +18,19 @@ class Movies extends StatelessWidget {
       itemBuilder: (context, index){
           final movie = this.movies[index];
           return ListTile(
-            leading: CircleAvatar(child: Image.network(movie.poster),),
+             leading: 
+            //  CircleAvatar(child:Image.network(movie.poster)),
+            Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(movie.poster)
+              ),
+              borderRadius: BorderRadius.circular(6)
+            ),
+            width: 50, 
+            height: 100,
+            ),
             title: Text(movie.title),
             subtitle: Text(movie.type),
             trailing: Text(movie.year),

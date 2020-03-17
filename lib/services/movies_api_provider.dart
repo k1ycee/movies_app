@@ -11,8 +11,8 @@ class ServedMovie{
     final call = await http.get(url);
     if(call.statusCode == 200){
       final pack = jsonDecode(call.body);
-      final Iterable json = pack['Search'];
-      return json.map((movee) => Movies.fromJson(pack)).toList();
+      final Iterable json = pack["Search"];
+      return json.map((movee) => Movies.fromJson(movee)).toList();
     }
     else{
       throw Exception('This Completely not right');
