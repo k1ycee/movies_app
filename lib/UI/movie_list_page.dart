@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_view_model/UI/movie_list.dart';
 import 'package:provider/provider.dart';
 import 'package:movie_view_model/view_models/movie_list_view_model.dart';
 
@@ -50,7 +51,7 @@ class _MoviesPageState extends State<MoviesPage> {
                 ),
               ),
             ),
-            Expanded(child: MoviesPage(),)
+            Expanded(child: Movies(movies:m.movies))
         ],
         ),
       ),
